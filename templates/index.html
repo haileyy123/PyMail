@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PyMail</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(45deg, #111, #222);
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .main-div {
+            border-radius: 20px;
+            border: 2px solid #666;
+            box-shadow: 0 0 20px rgba(200, 200, 200, 0.5);
+            background-color: #1e1e1e;
+            padding: 30px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .top-bar {
+            width: 100%;
+            background-color: #1c1c1c;
+            border-bottom: 2px solid #666;
+            color: #e0e0e0;
+            text-align: left;
+            padding: 10px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .top-bar h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .top-bar p {
+            margin: 0;
+            font-size: 15px;
+            color: grey;
+        }
+
+        h2 {
+            color: #e0e0e0;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #b0b0b0;
+            margin-bottom: 30px;
+            padding-left: 10px;
+        }
+
+        input {
+            border: 1px solid #444;
+            border-radius: 20px;
+            padding: 10px 15px;
+            width: calc(100% - 30px);
+            max-width: 300px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            background-color: #333;
+            color: #e0e0e0;
+            transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+        }
+
+        input::placeholder {
+            color: #777;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #1976d2;
+        }
+
+        input[type="submit"] {
+            background-color: #1976d2;
+            color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #1565c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>PyMail</h1>
+        <p>An Open Source Email Server</p>
+        </div>
+    </div>
+    <div class="main-div">
+        <h2>Disposable Email</h2>
+        <p>Enter an email below to go to the mailbox. Make sure you have your domain linked to your PyMail server to be able to receive emails</p>
+        <form id="emailForm" method="post" onsubmit="redirectToInbox(event)" style="display: flex; flex-direction: column; align-items: center;">
+            <input id="emailInput" type="email" placeholder="Enter your email" required>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+    function redirectToInbox(event) {
+        event.preventDefault();
+        var email = document.getElementById("emailInput").value;
+        window.location.href = "/view_inbox?email=" + encodeURIComponent(email);
+    }
+    </script>
+</body>
+</html>
