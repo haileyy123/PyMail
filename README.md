@@ -26,3 +26,12 @@ This lets people visit your webiste using your domain and lets you receive email
 4. set the record type for your main domain to `MX` set the priority to `10` and set the host to `mail.yourdomain.com`
 
 you will now be able to visit your website by going to mail.yourdomain.com and receive emails that get sent to any email address @yourdomain.com
+
+## Screenshots
+
+![main page](https://github.com/haileyy123/PyMail/blob/master/screenshots/main_page.png?raw=true)
+![terminal](https://github.com/haileyy123/PyMail/blob/master/screenshots/terminal.png?raw=true)
+
+## Get Emails Through JSON Api
+
+just send a get request to mail.yourdomain.com/get_inbox?email=something@yourdomain.com and it will return the inbox in json format.
