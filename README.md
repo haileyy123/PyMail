@@ -1,6 +1,7 @@
 # Py Mail  
 A simple open source email server and temporary email site written in python
 
+see a demo at http://mail.haileyy.lol the domain that receives emails is haileyy.lol
 ## Usage Instructions
 
 1. Download This Repository
