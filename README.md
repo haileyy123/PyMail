@@ -25,4 +25,4 @@ This lets people visit your webiste using your domain and lets you receive email
 3. create a new subdomain called `mail` set the record type to `A` and set the target host to your public ipv4.
 4. set the record type for your main domain to `MX` set the priority to `10` and set the host to `mail.yourdomain.com`
 
-you will now be able to visit your website py going to mail.yourdomain.com and receive emails that get sent to any email address @yourdomain.com
+you will now be able to visit your website by going to mail.yourdomain.com and receive emails that get sent to any email address @yourdomain.com
